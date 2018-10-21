@@ -5,5 +5,6 @@ This application utilizes a MySQL database, and has only 100 players currently i
 
 # Setting up the application and environment
 ```bash
-git clone 
+git clone https://github.com/arunach2/NBA_Draft_Simulator.git
+
 ```
