@@ -25,6 +25,7 @@ public class NbaPlayer {
 	
 	public static void main(String Args[]) {
 		NbaPlayer player = new NbaPlayer("Lebron", "SF", 25, 9, 9, 2, 1, 33);
+		NbaPlayer player2 = new NbaPlayer("Steph", "SF", 25, 9, 9, 2, 1, 30);
 		System.out.println(player.age);
 		System.out.println(player.point);
 	}
