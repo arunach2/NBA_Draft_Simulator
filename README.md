@@ -4,3 +4,6 @@ Simulation of an NBA Fantasy Draft. Program will ask how many participants will 
 This application utilizes a MySQL database, and has only 100 players currently in the databse.
 
 # Setting up the application and environment
+```bash
+git clone 
+```
