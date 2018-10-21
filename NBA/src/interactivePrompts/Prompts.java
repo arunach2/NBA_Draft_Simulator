@@ -50,10 +50,13 @@ public class Prompts {
 
 	public static void performDraft() {
 	    int counter = 1;
+	    boolean direction_flag = true;
         ArrayList<NbaPlayer> listOfPlayers = GetPlayerList.createPlayerList();
         int playersLeft = listOfPlayers.size() - numPlayers * 5;
         System.out.println(playersLeft);
         while (listOfPlayers.size() > playersLeft) {
+            String userName = playerOrder.get(counter);
+            System.out.println(userName + " it is your turn");
             printPlayerList.listAll(listOfPlayers);
             System.out.println("Which player do you want to select?");
             int playerChosen = reader.nextInt();
@@ -61,14 +64,19 @@ public class Prompts {
                 System.out.println("Player number you punched in does not exist! Please type again!");
                 playerChosen = reader.nextInt();
             }
-            String userName = playerOrder.get(counter);
+
             String playerNameChosen = listOfPlayers.get(playerChosen).playerName;
             listOfPlayers.remove(playerChosen);
             playersDrafted.get(userName).add(playerNameChosen);
-            counter++;
-            if (counter > numPlayers) {
-                counter = 1;
+            if (direction_flag) {
+                counter++;
             }
+            else {
+                counter--;
+            }
+
+            if (counter > numPlayers) {direction_flag = false; counter--;}
+            else if (counter < 1) {direction_flag =  true; counter++;}
         }
 
         reader.close();
