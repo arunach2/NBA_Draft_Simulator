@@ -3,7 +3,7 @@
 bin/
 .idea/
 *.iml
-*.DS_Store
+.DS_Store
 # Log file
 *.log
 
